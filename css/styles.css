@@ -1,12 +1,12 @@
 .container-login {
-    margin-top: 210px;
+    margin-top: 210px!important;
 	width:332px!important;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 15px!important;
+	padding-bottom: 15px!important;
 
-	border-radius: 8px;
+	border-radius: 8px!important;
 
-	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
 }
 
 .center{
