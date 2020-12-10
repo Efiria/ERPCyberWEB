@@ -8,8 +8,12 @@
 	<title>Login</title>
 </head>
 
+<?php
+    session_start();
+?>
+
 <body>
-	<div class="container">
+	<div class="container container-login">
 		<div class="row justify-content-center align-items-center">
 			<form class="col-12">
 				<div class="form-group">
@@ -36,7 +40,7 @@
 
 <footer>
 	<script type="text/javascript" src="./js/jquery.js"></script>
-	<script type="text/javascript" src="./js/scripts.js"></script>
+	<script type="text/javascript" src="./js/login.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.js"></script>
 </footer>
 </html>

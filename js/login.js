@@ -13,8 +13,10 @@ $(document).ready(function(e){
 				"password" : password 
 			},
 			success: function(data, textStatus, jqXHR) {
-				alert(data);
-				// window.location = './login.php';
+				console.log(data);
+				if (data == 'logged') {
+					window.location = './view/home.php';
+				}
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
 				alert("Error couldn't send the informations");
