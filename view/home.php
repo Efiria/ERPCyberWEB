@@ -18,11 +18,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="../css/styles.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
   </head>
-  <body>
-
+  <body class="d-flex flex-column h-100">
+  <main role="main" class="flex-shrink-0">
   <div class="container">
 		<div class="row justify-content-center">
             <div class="col-12 title">
@@ -36,30 +36,42 @@
                 </div>
                 <hr>
             </div>
-            <div class="col-12">
-                <!-- Content -->
+            <div class="col-12 content-home">
                 <div class="row align-items-center">
                     <div class="col-3">
-                        Stock
+                        <a href="#" class="tile stock">
+                            <h3 class="title">Stock</h3>
+                        </a>
                     </div>
                     <div class="col-3">
-                        Customers
+                    <a href="#" class="tile customer">
+                            <h3 class="title">Customer</h3>
+                        </a>
                     </div>
                     <div class="col-3">
-                        Orders
+                    <a href="#" class="tile orders">
+                            <h3 class="title">Orders</h3>
+                        </a>
                     </div>
                     <div class="col-3">
-                        Employees
+                    <a href="#" class="tile employees">
+                            <h3 class="title">Employees</h3>
+                        </a>
                     </div>
                 </div>
             </div>
 		</div>
-	</div>
+    </div>
+</main>
+    <footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted">&copy 2020 - ERP Cyber</span>
+  </div>
+</footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
 </html>

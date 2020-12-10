@@ -10,6 +10,11 @@
 
 <?php
     session_start();
+
+    if(isset($_SESSION['USER'])){
+        header('Location: ./view/home.php');
+        exit();
+    }; 
 ?>
 
 <body>

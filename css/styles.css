@@ -24,3 +24,64 @@
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
+
+.btn-primary {
+	background-color: #1ABC9C!important;
+	border-color : #1ABC9C!important;
+}
+
+.btn-primary:hover {
+	background-color: #0B5345!important;
+	border-color : #0B5345!important;
+}
+
+.tile {  
+	width: 100%;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 25px;
+	margin-bottom: 10px;
+	text-align: center;
+	border-radius: 10px;
+	vertical-align: middle;
+}
+
+.tile.stock{
+	background-color: #0E6655;
+}
+.tile.customer{
+	background-color: #117A65;
+}
+.tile.orders{
+	background-color: #138D75;
+}
+.tile.employees{
+	background-color: #16A085;
+}
+
+.tile:hover {  
+	background: #0B5345;		
+}
+
+a {
+	color: white;
+}
+
+a:hover {
+	color: lightgrey;
+	text-decoration: none;
+}
+
+.content-home {
+	margin-top: 15%;
+}
+
+.footer {
+	background-color: #f5f5f5;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: #FFF;
+}
+  
