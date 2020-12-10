@@ -26,12 +26,19 @@
   <div class="container">
 		<div class="row justify-content-center">
             <div class="col-12 title">
-                <h1 class="title-text"> ERP Cyber Web </h1>
+                <div class="row">
+                    <div class="col-10">
+                        <h1 class="title-text"> ERP Cyber Web </h1>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary shadow-2 mb-4" onclick="location.href='../logout.php'">Logout</button>
+                    </div>
+                </div>
                 <hr>
             </div>
             <div class="col-12">
                 <!-- Content -->
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-3">
                         Stock
                     </div>
