@@ -1,0 +1,21 @@
+.container {
+    margin-top: 210px;
+	width:332px!important;
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	border-radius: 8px;
+
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.center{
+	padding-left: 45%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+
+.button-right {
+    padding-left: 70%;
+}
