@@ -96,16 +96,37 @@
 		  			<span aria-hidden="true">&times;</span>
 				</button>
 	  		</div>
+			<form>
 			<div class="modal-body">
 				<div class="form-group">
 					<label for="username-input">Username</label>
-					<input type="text" class="form-control" id="username-input" placeholder="Username" required>
+					<input type="text" class="form-control" id="username-input" required>
+				</div>
+				<div class="form-group">
+					<label for="email-input">Email</label>
+					<input type="email" class="form-control" id="email-input" required>
+				</div>
+				<div class="form-group">
+					<label for="password1-input">Password</label>
+					<input type="password" class="form-control" id="password1-input" required>
+				</div>
+				<div class="form-group">
+					<label for="password2-input">Confirm Password</label>
+					<input type="password" class="form-control" id="password2-input" required>
+				</div>
+				<div class="form-group">
+					<label for="role-input">Select role</label>
+					<select class="form-control" id="role-input" required>
+						<option value="admin">Admin</option>
+						<option value="user" selected>User</option>
+					</select>
 				</div>
 	  		</div>
 	  		<div class="modal-footer">
-				<button type="button" class="btn btn-primary">Save changes</button>
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Add</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 	  		</div>
+			</form>
 		</div>
   	</div>
 </div>
