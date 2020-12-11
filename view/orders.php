@@ -16,6 +16,7 @@
 	while($item = $result->fetch_object()){
 		$listitems[$item->id] = $item;
     }
+    $db->close();
 ?>
 
 
@@ -93,6 +94,20 @@
   </div>
 </footer>
 
+<?php
+
+$db = mysqli_connect('localhost', 'root', '', 'test');
+
+$customer_query = "SELECT * FROM customer";
+$resultcustomer = mysqli_query($db, $customer_query);
+
+$listitemscustomer;
+while($listitemscustomer = $resultcustomer->fetch_object()){
+    $itemcustomer[$listitemscustomer->id] = $listitemscustomer;
+}
+
+?>
+
 <div id="myModal" class="modal" tabindex="-1" role="dialog">
   	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -104,32 +119,26 @@
 	  		</div>
 			<form>
 			<div class="modal-body">
-				<div class="form-group">
-					<label for="username-input">Username</label>
-					<input type="text" class="form-control" id="username-input" required>
-				</div>
-				<div class="form-group">
-					<label for="email-input">Email</label>
-					<input type="email" class="form-control" id="email-input" required>
-				</div>
-				<div class="form-group">
-					<label for="password1-input">Password</label>
-					<input type="password" class="form-control" id="password1-input" required>
-				</div>
-				<div class="form-group">
-					<label for="password2-input">Confirm Password</label>
-					<input type="password" class="form-control" id="password2-input" required>
-				</div>
-				<div class="form-group">
-					<label for="role-input">Select role</label>
-					<select class="form-control" id="role-input" required>
-						<option value="admin">Admin</option>
-						<option value="user" selected>User</option>
+                <div class="form-group">
+					<label for="role-input">Select customer</label>
+					<select class="form-control" id="customer-input" required>
+                        <?php foreach ($itemcustomer as $customer) { ?>
+                            
+						    <option value="<?=$customer->id?>"><?=$customer->Name?> <?=$customer->LastName?></option>
+                        <?php } ?>
 					</select>
+				</div>
+				<div class="form-group">
+					<label for="order-input">Order Number</label>
+					<input type="text" class="form-control" id="order-input" required>
+				</div>
+				<div class="form-group">
+					<label for="price-input">Price</label>
+					<input type="number" class="form-control" id="price-input" required>
 				</div>
 	  		</div>
 	  		<div class="modal-footer">
-				<button type="button" class="btn btn-primary" id="add-user">Add</button>
+				<button type="button" class="btn btn-primary" id="add-order">Add</button>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 	  		</div>
 			</form>

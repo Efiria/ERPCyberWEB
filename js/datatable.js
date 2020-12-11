@@ -6,6 +6,8 @@ $(document).ready(function() {
     $('#employees-table').DataTable( {
         "order": [[ 2, "asc" ]]
     } );
-
+    $('#orders-table').DataTable( {
+        "order": [[ 0, "asc" ]]
+    } );
 } );
 
