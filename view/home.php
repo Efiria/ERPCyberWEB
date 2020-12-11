@@ -19,6 +19,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
   </head>
   <body class="d-flex flex-column h-100">
@@ -27,10 +28,10 @@
 		<div class="row justify-content-center">
             <div class="col-12 title">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-11">
                         <h1 class="title-text"> ERP Cyber Web </h1>
                     </div>
-                    <div class="col-2">
+                    <div class="col-1">
                         <button class="btn btn-primary shadow-2 mb-4" onclick="location.href='../logout.php'">Logout</button>
                     </div>
                 </div>
@@ -39,12 +40,12 @@
             <div class="col-12 content-home">
                 <div class="row align-items-center">
                     <div class="col-3">
-                        <a href="#" class="tile stock">
+                        <a href="stock.php" class="tile stock">
                             <h3 class="title">Stock</h3>
                         </a>
                     </div>
                     <div class="col-3">
-                    <a href="#" class="tile customer">
+                    <a href="customers.php" class="tile customer">
                             <h3 class="title">Customer</h3>
                         </a>
                     </div>
@@ -54,7 +55,7 @@
                         </a>
                     </div>
                     <div class="col-3">
-                    <a href="#" class="tile employees">
+                    <a href="employees.php" class="tile employees">
                             <h3 class="title">Employees</h3>
                         </a>
                     </div>
@@ -68,6 +69,7 @@
     <span class="text-muted">&copy 2020 - ERP Cyber</span>
   </div>
 </footer>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
