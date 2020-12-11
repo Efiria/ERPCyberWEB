@@ -50,7 +50,7 @@
                         </a>
                     </div>
                     <div class="col-3">
-                    <a href="#" class="tile orders">
+                    <a href="orders.php" class="tile orders">
                             <h3 class="title">Orders</h3>
                         </a>
                     </div>
