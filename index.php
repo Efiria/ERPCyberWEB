@@ -34,7 +34,7 @@
 				</div>
 				<div class="form-group">
 					<div class="button-right">
-						<input class="btn btn-primary shadow-2 mb-4" id="login" type="button" value="Login">
+						<input type="button" class="btn btn-primary shadow-2 mb-4" id="login" value="Login">
 					</div>
 				</div>
 			</form>   

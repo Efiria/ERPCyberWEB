@@ -57,7 +57,7 @@
 			<div class="col-12 content-stock">
 				<div class="row align-items-center">
 					<div class="col-12">
-						<table id="customers-table" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+						<table id="employees-table" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
 							<thead>
 								<tr>
 									<th>Username</th>
@@ -123,7 +123,7 @@
 				</div>
 	  		</div>
 	  		<div class="modal-footer">
-				<button type="button" class="btn btn-primary">Add</button>
+				<button type="button" class="btn btn-primary" id="add-user">Add</button>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 	  		</div>
 			</form>
@@ -137,5 +137,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js"></script>
 	<script type="text/javascript" src="../js/datatable.js"></script>
+	<script type="text/javascript" src="../js/employee.js"></script>
 </body>
 </html>
