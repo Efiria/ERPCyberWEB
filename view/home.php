@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-3">
                     <a href="customers.php" class="tile customer">
-                            <h3 class="title">Customer</h3>
+                            <h3 class="title">Customers</h3>
                         </a>
                     </div>
                     <div class="col-3">

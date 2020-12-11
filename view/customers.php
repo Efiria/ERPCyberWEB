@@ -22,7 +22,7 @@
 
 <html lang="en">
   <head>
-    <title>Stock</title>
+    <title>Customers</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,15 +39,18 @@
 		<div class="row justify-content-center">
             <div class="col-12 title">
                 <div class="row">
-                    <div class="col-10">
-                        <h1 class="title-text"> Customers </h1>
-                    </div>
-                    <div class="col-1">
-                        <button class="btn btn-primary shadow-2 mb-4" onclick="location.href='home.php'">Home</button>
-                    </div>
-                    <div class="col-1">
-                        <button class="btn btn-primary shadow-2 mb-4" onclick="location.href='../logout.php'">Logout</button>
-                    </div>
+                <div class="col-8">
+						<h1 class="title-text"> Customers </h1>
+					</div>
+					<div class="col-2">
+						<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add customer</button>
+					</div>
+					<div class="col-1">
+						<button class="btn btn-primary shadow-2 mb-4" onclick="location.href='home.php'">Home</button>
+					</div>
+					<div class="col-1">
+						<button class="btn btn-primary shadow-2 mb-4" onclick="location.href='../logout.php'">Logout</button>
+					</div>
                 </div>
                 <hr>
             </div>
@@ -86,11 +89,50 @@
   </div>
 </footer>
 
+<div id="myModal" class="modal" tabindex="-1" role="dialog">
+  	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+	  		<div class="modal-header">
+				<h5 class="modal-title">Add Customer</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  			<span aria-hidden="true">&times;</span>
+				</button>
+	  		</div>
+			<form>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="firstname-input">Firstname</label>
+					<input type="text" class="form-control" id="firstname-input" required>
+				</div>
+				<div class="form-group">
+					<label for="lastname-input">Lastname</label>
+					<input type="text" class="form-control" id="lastname-input" required>
+				</div>
+				<div class="form-group">
+					<label for="address-input">Address</label>
+					<input type="text" class="form-control" id="address-input" required>
+				</div>
+				<div class="form-group">
+					<label for="country-input">Country</label>
+					<input type="text" class="form-control" id="country-input" required>
+				</div>
+	  		</div>
+	  		<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="add-user">Add</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+	  		</div>
+			</form>
+		</div>
+  	</div>
+</div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js"></script>
     <script type="text/javascript" src="../js/datatable.js"></script>
+	<script type="text/javascript" src="../js/customer.js"></script>
+
 </body>
 </html>
