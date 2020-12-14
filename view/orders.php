@@ -92,7 +92,7 @@
 									<td> <?= $order->price ?> </td>
 									<td style="text-align:center"> <button type="button" class="btn btn-primary show-details" pid="<?= $order->numOrder ?>">+</button> </td>
 								</tr>
-								<tr class="<?= $order->numOrder ?>-details" style="display:none" display="hidden">
+								<tr class="<?= $order->numOrder ?>-details tableheader" style="display:none" display="hidden">
 									<td style="display:none"><?= $order->numOrder ?></td>
 									<td> </td>
 									<td> </td>
@@ -115,7 +115,7 @@
 									</tr>
 								<?php } 
 									} ?>
-									<tr class="<?= $order->numOrder ?>-details" style="display:none" display="hidden">
+									<tr class="<?= $order->numOrder ?>-details tableheader" style="display:none" display="hidden">
 									<td style="display:none"><?= $order->numOrder ?></td>
 									<td> </td>
 									<td> </td>
