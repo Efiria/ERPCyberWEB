@@ -18,7 +18,7 @@ if (!$mysqli->query("INSERT INTO orders (numOrder,idcustomer,price) VALUES ('$nu
 } else {
 
     foreach ($order as $idproduct => $quantity) {
-        if  (!$mysqli->query("INSERT INTO orders_detail (idorder,idproduct,quantity) VALUES ('$numOrder','$idproduct','$quantity') ") ) {
+        if  (!$mysqli->query("INSERT INTO orders_detail (idorder,idproduct,order_quantity) VALUES ('$numOrder','$idproduct','$quantity') ") ) {
             echo "Table creation failed: (" . $mysqli->errno . ") " . $mysqli->error;
             return;
         } 
