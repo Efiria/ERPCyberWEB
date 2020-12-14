@@ -156,7 +156,7 @@ while($itemstock = $resultstock->fetch_object()){
 							<tr>
 								<td style="width: 25%;"> <?= $stock->product ?> </td>
 								<td> <input type="number" id="<?= str_replace(' ', '', $stock->product) ?>-price" class="form-control" value="<?= $stock->price ?>" disabled /></td>
-								<td> <input type="number" class="form-control quantity" min="0" value="0" product="<?= str_replace(' ', '', $stock->product) ?>" required> </td>
+								<td> <input type="number" class="form-control quantity" min="0" value="0" product="<?= str_replace(' ', '', $stock->product) ?>" pid="<?= $stock->id ?>" required> </td>
 								<td> <input type="number" id="<?= str_replace(' ', '', $stock->product) ?>-total" class="form-control total" value="0" disabled /> </td>
 							</tr>
 							<?php } ?>
