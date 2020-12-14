@@ -57,10 +57,22 @@ $(document).ready(function(e){
         let totaldisplay = 0;
         $(".total").each(function(){
             totaldisplay = totaldisplay + parseInt($(this).val())
-            // console.log(parseInt($(this).val()))
         });
 
         $("#price-input").val(totaldisplay)
     });
 
+    $(".show-details").click(function() {
+
+        if ($("."+$(this).attr('pid')+"-details").attr('display') == 'hidden') {
+            $(this).text('-')
+            $("."+$(this).attr('pid')+"-details").attr('display','pashidden')
+            $("."+$(this).attr('pid')+"-details").css('display','table-row')
+
+        }else{
+            $(this).text('+')
+            $("."+$(this).attr('pid')+"-details").attr('display','hidden')
+            $("."+$(this).attr('pid')+"-details").css('display','none')
+        }
+    })
 });

@@ -12,11 +12,22 @@
 	$stock_query = "SELECT orders.id, orders.numOrder, customer.Name, customer.LastName, customer.Address, customer.Country, orders.price FROM orders LEFT JOIN customer ON orders.idcustomer = customer.id";
 	$result = mysqli_query($db, $stock_query);
 	$listitems;
-
+	$cp = 0;
 	while($item = $result->fetch_object()){
-		$listitems[$item->id] = $item;
-    }
-    $db->close();
+		$cp ++;
+		$listitems[$cp] = $item;
+	}
+	
+	$ordersdetail_query = "SELECT * FROM orders_detail LEFT JOIN stocks ON stocks.id = orders_detail.idproduct";
+	$resultdetails = mysqli_query($db, $ordersdetail_query);
+	$listdetails;
+	$cp = 0;
+	while($detailitem = $resultdetails->fetch_object()){
+		$cp ++;
+		$listdetails[$cp] = $detailitem;
+	}
+	$db->close();
+	
 ?>
 
 
@@ -31,10 +42,10 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css"/>
-
+	
 	<link rel="stylesheet" type="text/css" href="../css/styles.css"/>
   </head>
-  <body class="d-flex flex-column h-100">
+  <body class="d-flex flex-column h-120">
   <main role="main" class="flex-shrink-0">
   <div class="container">
 		<div class="row justify-content-center">
@@ -58,7 +69,7 @@
 			<div class="col-12 content-stock">
 				<div class="row align-items-center">
 					<div class="col-12">
-						<table id="employees-table" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+						<table id="orders-table" class="table table-striped table-bordered" style="width:100%">
 							<thead>
 								<tr>
 									<th>Order Number</th>
@@ -67,6 +78,7 @@
 									<th>Address</th>
 									<th>Country</th>
 									<th>Order Price</th>
+									<th>Details</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -78,21 +90,55 @@
 									<td> <?= $order->Address ?> </td>
 									<td> <?= $order->Country ?> </td>
 									<td> <?= $order->price ?> </td>
+									<td style="text-align:center"> <button type="button" class="btn btn-primary show-details" pid="<?= $order->numOrder ?>">+</button> </td>
 								</tr>
-								<?php } ?>
+								<tr class="<?= $order->numOrder ?>-details" style="display:none" display="hidden">
+									<td style="display:none"><?= $order->numOrder ?></td>
+									<td> </td>
+									<td> </td>
+									<td style="font-weight: bold">Product  </td>
+									<td style="font-weight: bold">Unit Price  </td>
+									<td style="font-weight: bold">Quantity </td>
+									<td> </td>
+									<td> </td>
+								</tr>
+								<?php foreach ($listdetails as $detail) { 
+									if ($detail->idorder == $order->numOrder) { 	?>
+									<tr class="<?= $order->numOrder ?>-details" style="display:none" display="hidden">
+										<td><?= $order->numOrder ?></td>
+										<td></td>
+										<td><?= $detail->product ?></td>
+										<td><?= $detail->price ?></td>
+										<td><?= $detail->order_quantity ?></td>
+										<td></td>
+										<td></td>
+									</tr>
+								<?php } 
+									} ?>
+									<tr class="<?= $order->numOrder ?>-details" style="display:none" display="hidden">
+									<td style="display:none"><?= $order->numOrder ?></td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									<td> </td>
+									</tr>
+									<?php }
+								?>
 							</tbody>
 						</table>
+						<div class="col-12">
+						<br>
+						<br>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </main>
-	<footer class="footer mt-auto py-3">
-  <div class="container">
-	<span class="text-muted">&copy 2020 - ERP Cyber</span>
-  </div>
-</footer>
 
 <?php
 
@@ -102,8 +148,10 @@ $customer_query = "SELECT * FROM customer";
 $resultcustomer = mysqli_query($db, $customer_query);
 
 $listitemscustomer;
+$cp = 0;
 while($listitemscustomer = $resultcustomer->fetch_object()){
-    $itemcustomer[$listitemscustomer->id] = $listitemscustomer;
+	$cp++;
+    $itemcustomer[$cp] = $listitemscustomer;
 }
 
 
@@ -111,8 +159,10 @@ $stock_query = "SELECT * FROM stocks";
 $resultstock = mysqli_query($db, $stock_query);
 $listitemsstock;
 
+$cp = 0;
 while($itemstock = $resultstock->fetch_object()){
-	$listitemsstock[$itemstock->id] = $itemstock;
+	$cp++;
+	$listitemsstock[$cp] = $itemstock;
 }
 
 ?>

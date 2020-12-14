@@ -7,7 +7,8 @@ $(document).ready(function() {
         "order": [[ 2, "asc" ]]
     } );
     $('#orders-table').DataTable( {
-        "order": [[ 0, "asc" ]]
+        "order": [[ 0, "asc" ]],
+        "pageLength": 100
     } );
 } );
 
