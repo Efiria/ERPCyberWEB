@@ -8,7 +8,7 @@ $lastname=$_POST['lastname'];
 $address=$_POST['address'];
 $country=$_POST['country'];
 
-$mysqli = new mysqli("localhost", "root", "", "test");
+$mysqli = new mysqli("localhost", "brubru", "hahamdp!123", "test");
 if ($mysqli->connect_errno) {
     echo "Echec lors de la connexion à MySQL  : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }

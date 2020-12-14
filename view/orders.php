@@ -7,7 +7,7 @@
 		exit();
 	}; 
 
-	$db = mysqli_connect('localhost', 'root', '', 'test');
+	$db =  new mysqli("localhost", "brubru", "hahamdp!123", "test");
 
 	$stock_query = "SELECT orders.id, orders.numOrder, customer.Name, customer.LastName, customer.Address, customer.Country, orders.price FROM orders LEFT JOIN customer ON orders.idcustomer = customer.id";
 	$result = mysqli_query($db, $stock_query);
@@ -96,7 +96,7 @@
 
 <?php
 
-$db = mysqli_connect('localhost', 'root', '', 'test');
+$db =  new mysqli("localhost", "brubru", "hahamdp!123", "test");
 
 $customer_query = "SELECT * FROM customer";
 $resultcustomer = mysqli_query($db, $customer_query);

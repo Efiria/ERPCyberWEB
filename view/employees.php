@@ -7,7 +7,7 @@
 		exit();
 	}; 
 
-	$db = mysqli_connect('localhost', 'root', '', 'test');
+	$db =  new mysqli("localhost", "brubru", "hahamdp!123", "test");
 
 	$stock_query = "SELECT * FROM users";
 	$result = mysqli_query($db, $stock_query);

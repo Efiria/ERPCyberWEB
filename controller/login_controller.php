@@ -2,7 +2,7 @@
 
 session_start();
 
-$db = mysqli_connect('localhost', 'root', '', 'test');
+$db =  new mysqli("localhost", "brubru", "hahamdp!123", "test");
 
 
 $email=$_POST['email'];
