@@ -3,12 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2020 at 09:44 AM
+-- Generation Time: Dec 14, 2020 at 04:51 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,8 +20,6 @@ START TRANSACTION;
 --
 -- Database: `test`
 --
-CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `test`;
 
 -- --------------------------------------------------------
 
@@ -65,12 +64,32 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `numOrder`, `idcustomer`, `price`) VALUES
-(1, '124', 1, 130),
-(2, '125', 1, 95),
-(3, '146', 2, 210),
-(4, 'A215', 4, 256),
-(5, '155zz', 3, 326),
-(6, '12B', 5, 28);
+(9, '1280A', 3, 800),
+(10, '1280B', 3, 150),
+(11, '41A', 1, 600);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders_detail`
+--
+
+CREATE TABLE `orders_detail` (
+  `id` int(11) NOT NULL,
+  `idorder` varchar(11) NOT NULL,
+  `idproduct` int(11) NOT NULL,
+  `order_quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders_detail`
+--
+
+INSERT INTO `orders_detail` (`id`, `idorder`, `idproduct`, `order_quantity`) VALUES
+(3, '1280A', 3, 2),
+(4, '1280B', 4, 30),
+(5, '41A', 3, 1),
+(6, '41A', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -93,7 +112,11 @@ INSERT INTO `stocks` (`id`, `product`, `price`, `quantity`) VALUES
 (1, 'Apple', 1, 500),
 (2, 'Pear', 2, 100),
 (3, 'Computer', 400, 30),
-(4, 'Paper Sheet', 5, 350);
+(4, 'Paper Sheet', 5, 350),
+(5, 'Computer Screen', 200, 500),
+(6, 'Cabinet', 350, 100),
+(7, 'Shoes', 60, 30),
+(8, 'Pants', 5, 350);
 
 -- --------------------------------------------------------
 
@@ -140,10 +163,17 @@ ALTER TABLE `orders`
   ADD KEY `idcustomer` (`idcustomer`) USING BTREE;
 
 --
+-- Indexes for table `orders_detail`
+--
+ALTER TABLE `orders_detail`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `stocks`
 --
 ALTER TABLE `stocks`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `product` (`product`) USING BTREE;
 
 --
 -- Indexes for table `users`
@@ -165,13 +195,19 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `orders_detail`
+--
+ALTER TABLE `orders_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `stocks`
 --
 ALTER TABLE `stocks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
