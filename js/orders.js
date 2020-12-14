@@ -23,5 +23,24 @@ $(document).ready(function(e){
                 alert("Error couldn't send the informations");
             }
         });
-	})
+    })
+    
+    $( ".quantity" ).change(function() {
+        if($(this).val() == null){
+            $(this).val(0)
+        }
+        
+        let total = "#" + $(this).attr('product') + "-total";
+        let price = "#" + $(this).attr('product') + "-price";
+        $(total).val($(this).val() * $(price).val())
+
+        let totaldisplay = 0;
+        $(".total").each(function(){
+            totaldisplay = totaldisplay + parseInt($(this).val())
+            console.log(parseInt($(this).val()))
+        });
+
+        $("#price-input").val(totaldisplay)
+    });
+
 });

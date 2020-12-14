@@ -106,6 +106,15 @@ while($listitemscustomer = $resultcustomer->fetch_object()){
     $itemcustomer[$listitemscustomer->id] = $listitemscustomer;
 }
 
+
+$stock_query = "SELECT * FROM stocks";
+$resultstock = mysqli_query($db, $stock_query);
+$listitemsstock;
+
+while($itemstock = $resultstock->fetch_object()){
+	$listitemsstock[$itemstock->id] = $itemstock;
+}
+
 ?>
 
 <div id="myModal" class="modal" tabindex="-1" role="dialog">
@@ -133,8 +142,30 @@ while($listitemscustomer = $resultcustomer->fetch_object()){
 					<input type="text" class="form-control" id="order-input" required>
 				</div>
 				<div class="form-group">
-					<label for="price-input">Price</label>
-					<input type="number" class="form-control" id="price-input" required>
+					<table id="order-table" class="display" style="width:100%">
+						<thead>
+							<tr>
+								<th>Product</th>
+								<th>UnitPrice</th>
+								<th>Quantity</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach ($listitemsstock as $stock) { ?>
+							<tr>
+								<td style="width: 25%;"> <?= $stock->product ?> </td>
+								<td> <input type="number" id="<?= str_replace(' ', '', $stock->product) ?>-price" class="form-control" value="<?= $stock->price ?>" disabled /></td>
+								<td> <input type="number" class="form-control quantity" min="0" value="0" product="<?= str_replace(' ', '', $stock->product) ?>" required> </td>
+								<td> <input type="number" id="<?= str_replace(' ', '', $stock->product) ?>-total" class="form-control total" value="0" disabled /> </td>
+							</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+				</div>
+				<div class="form-group">
+					<label for="price-input">Total Order</label>
+					<input type="number" class="form-control" id="price-input" value="0" disabled>
 				</div>
 	  		</div>
 	  		<div class="modal-footer">
