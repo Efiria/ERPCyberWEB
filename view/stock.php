@@ -39,15 +39,18 @@
 		<div class="row justify-content-center">
             <div class="col-12 title">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-8">
                         <h1 class="title-text"> Stock </h1>
                     </div>
-                    <div class="col-1">
-                        <button class="btn btn-primary shadow-2 mb-4" onclick="location.href='home.php'">Home</button>
-                    </div>
-                    <div class="col-1">
-                        <button class="btn btn-primary shadow-2 mb-4" onclick="location.href='../logout.php'">Logout</button>
-                    </div>
+					<div class="col-2">
+						<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add stock</button>
+					</div>
+					<div class="col-1">
+						<button class="btn btn-primary shadow-2 mb-4" onclick="location.href='home.php'">Home</button>
+					</div>
+					<div class="col-1">
+						<button class="btn btn-primary shadow-2 mb-4" onclick="location.href='../logout.php'">Logout</button>
+					</div>
                 </div>
                 <hr>
             </div>
@@ -84,11 +87,45 @@
   </div>
 </footer>
 
+<div id="myModal" class="modal" tabindex="-1" role="dialog">
+  	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+	  		<div class="modal-header">
+				<h5 class="modal-title">Add Product</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  			<span aria-hidden="true">&times;</span>
+				</button>
+	  		</div>
+			<form>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="username-input">Product</label>
+					<input type="text" class="form-control" id="product-input" required>
+				</div>
+				<div class="form-group">
+					<label for="email-input">Price</label>
+					<input type="number" min="0" class="form-control" id="price-input" required>
+				</div>
+                <div class="form-group">
+					<label for="email-input">Quantity</label>
+					<input type="number" min="0" class="form-control" id="quantity-input" required>
+				</div>
+	  		</div>
+	  		<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="add-stock">Add</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+	  		</div>
+			</form>
+		</div>
+  	</div>
+</div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="../js/datatables.min.js"></script>
     <script type="text/javascript" src="../js/datatable.js"></script>
+    <script type="text/javascript" src="../js/stock.js"></script>
 </body>
 </html>

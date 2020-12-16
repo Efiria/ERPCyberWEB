@@ -2,7 +2,6 @@
 
 session_start();
 
-
 $firstname=$_POST['firstname'];
 $lastname=$_POST['lastname'];
 $address=$_POST['address'];
